@@ -1,0 +1,25 @@
+import folium
+
+print(dir(folium))
+#create a map object
+map = folium.Map(location=[37.2089572, -93.2922989],zoom_start=7)
+#folium.Marker(location=[37.2089572, -93.2922989], popup = 'City Center', icon= folium.Icon(icon = 'cloud')).add_to(map)
+#folium.Marker(location=[37.2089572, -93.2922989], popup = 'Where am I?', icon= folium.Icon(color = 'green')).add_to(map)
+print(map)
+#need html file out of this object - to create a map
+#look in the Map method directory to see all the methods we can apply to MAP
+
+print(dir(folium.Map))
+print(map.save('test.html'))
+#go look under your files for the surprise
+#right click on html file and open in browser
+
+#change zoom to 15 and add tiles = 'Stamen Terrain' and recreate the html file
+
+map2 = folium.Map(location=[37.2089572, -93.2922989],zoom_start=15, tiles = 'Stamen Terrain')
+folium.Marker(location=[37.2089572, -93.2922989], popup = 'City Center', icon= folium.Icon(icon = 'cloud')).add_to(map2)
+folium.Marker(location=[37.2063571, -93.2935799], popup = 'Where am I?', icon= folium.Icon(color = 'green')).add_to(map2)
+print(map2)
+print(map2.save('test2.html'))
+
+
